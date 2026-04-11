@@ -1,14 +1,11 @@
-mod output;
+use clap::Parser;
+
 mod capture;
+mod cli;
+mod output;
 
 fn main() {
     println!("{}", output::motd::motd());
-
     
-
-    // let mut cap = Device::lookup().unwrap().unwrap().open().unwrap();
-    // println!("{}", Device::lookup().unwrap().unwrap().name);
-    // while let Ok(packet) = cap.next_packet() {
-    //     println!("received packet! {:?}", packet);
-    // }
+    let args = cli::Args::parse();
 }
