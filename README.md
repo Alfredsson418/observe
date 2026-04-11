@@ -7,7 +7,6 @@
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Alfredsson418/observe?style=for-the-badge&color=mediumaquamarine">
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Alfredsson418/observe?style=for-the-badge&color=darkorange">
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/Alfredsson418/observe?style=for-the-badge&color=slateblue">
-  <img alt="Version number" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FAlfredsson418%2Fobserve%2Frefs%2Fheads%2Fmain%2Fdata%2Fversion%2Fversion.json&query=%24.version&style=for-the-badge&logoColor=violet&label=Main%20branch%20version">
   <!-- https://shields.io/badges/ -->
 </p>
 
