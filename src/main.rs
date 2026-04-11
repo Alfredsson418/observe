@@ -8,4 +8,6 @@ fn main() {
     println!("{}", output::motd::motd());
     
     let args = cli::Args::parse();
+
+    println!("{}", args.interface);
 }

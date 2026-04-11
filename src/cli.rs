@@ -4,14 +4,14 @@ use clap::Parser;
 #[command(name = "observe", about = "A packet capture tool")]
 pub struct Args {
     #[arg(short, long, default_value = "eth0")]
-    interface: String,
+    pub interface: String,
 
     #[arg(short, long, default_value_t = 0)]
-    count: usize,
+    pub count: usize,
 
     #[arg(short, long)]
-    filter: Option<String>,
+    pub filter: Option<String>,
 
     #[arg(short, long)]
-    verbose: bool,
+    pub verbose: bool,
 }
