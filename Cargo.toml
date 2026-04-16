@@ -5,5 +5,6 @@ edition = "2024"
 
 [dependencies]
 pcap = "2.4.0"
-etherparse = "0.18"
-clap = { version = "4", features = ["derive"] }
+etherparse = "0.18" # Used for parsing packets
+clap = { version = "4", features = ["derive"] } # Used for CLI args
+crossbeam = "0.8" # instead of mpsc for later possible upscaling with mutiple clonable receivers
