@@ -9,7 +9,7 @@ mod cli;
 mod output;
 mod config;
 
-fn main() {
+fn main() -> Result<(), pcap::Error>{
     println!("{}", output::motd::motd());
     
     let args = cli::Args::parse();
@@ -27,7 +27,11 @@ fn main() {
     let config_args = cli::Args::into_config(args);
 
     // Worker 1 — capture
-    thread::spawn(move || {
-        capture::session::start(&config_args, raw_tx);
+    let work1 = thread::spawn(move || {
+        capture::session::start(&config_args, raw_tx).unwrap();
     });
+    
+    work1.join().unwrap();
+
+    Ok(())
 }
