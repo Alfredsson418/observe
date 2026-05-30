@@ -1,1 +1,3 @@
-pub mod motd;                                                                                                  
+pub mod motd;    
+pub mod output;
+
