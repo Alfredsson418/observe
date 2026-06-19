@@ -28,6 +28,9 @@ Example:
 observe -i lo 
 ```
 
+
+<h2>Filter</h2>
+The filter syntax is based upon <a src="https://biot.com/capstats/bpf.html">Berkeley Packet Filter (BPF) syntax</a>
 <!--
 <h1>Want to contribute to the project?</h1>
 <p>Read about contribution to this project over at <a href="CONTRIBUTING.md">CONTRIBUTING.md</a></p>

@@ -14,10 +14,19 @@ mod types;
 
 use types::packetdata::PacketData;
 
+use crate::output::stdout::p_devices;
+
 fn main() -> Result<(), pcap::Error> {
     println!("{}", output::motd::motd());
 
     let args = cli::Args::parse();
+
+    if args.get_devices {
+        p_devices();
+        return Ok(());
+    }
+
+    // CAPTURE LOGIC
 
     //    [capture thread] --channel--> [parse thread] --channel--> [output thread]
     //      raw bytes                  ParsedPacket                 display/file/json
@@ -44,7 +53,6 @@ fn main() -> Result<(), pcap::Error> {
         let config = config_args.clone();
         move || output::output::output(&config, parsed_rx)
     });
-
 
     work1.join().unwrap();
     work2.join().unwrap();

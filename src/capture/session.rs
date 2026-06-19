@@ -7,7 +7,7 @@ use crate::types::packetdata::PacketData;
 
 pub fn start(config : &CaptureConfig, tx : Sender<PacketData>) -> Result<(), pcap::Error> {
 
-    let mut cap = Capture::from_device(config.interface.as_str())?
+    let mut cap = Capture::from_device(config.device.as_str())?
         .snaplen(config.snaplen)
         .promisc(config.promisc)
         .timeout(config.timeout)

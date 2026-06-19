@@ -5,7 +5,7 @@ use crate::config::CaptureConfig;
 #[command(name = "observe", about = "A packet capture tool")]
 pub struct Args {
     #[arg(short, long, default_value = "lo")]
-    pub interface: String,
+    pub device: String,
 
     #[arg(short, long, default_value_t = 0)]
     pub count: usize,
@@ -24,18 +24,23 @@ pub struct Args {
 
     #[arg(short, long, default_value_t = 1000)]
     pub timeout: i32,
+
+    #[arg(long, default_value_t = false)]
+    pub get_devices: bool,
 }
 
 impl Args {
     pub fn into_config(self) -> CaptureConfig {
         CaptureConfig {
-            interface: self.interface,
+            device: self.device,
             filter: self.filter,
             count: self.count,
             verbose: self.verbose,
             snaplen: self.snaplen,
             promisc: self.promisc,
             timeout: self.timeout,
+
+            get_devices: self.get_devices,
         }
     }
 }
