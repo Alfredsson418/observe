@@ -10,8 +10,8 @@ pub struct Args {
     #[arg(short, long, default_value_t = 0)]
     pub count: usize,
 
-    #[arg(short, long)]
-    pub filter: Option<String>,
+    #[arg(short, long, default_value = "")]
+    pub filter: String,
 
     #[arg(short, long, default_value_t = false)]
     pub verbose: bool,

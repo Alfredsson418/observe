@@ -1,7 +1,7 @@
 #[derive(Clone)]
 pub struct CaptureConfig {
     pub interface: String,
-    pub filter: Option<String>,
+    pub filter: String,
     pub count: usize,
     pub verbose: bool,
     pub promisc: bool,
